@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Clock & Stopwatch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Digital Clock & Stopwatch</h1>
+
+        <!-- Digital Clock -->
+
+        <div class="box clock-box">
+
+            <h2>Digital Clock</h2>
+
+            <div id="clock">
+                00:00:00
+            </div>
+
+            <div id="date">
+                Loading...
+            </div>
+
+        </div>
+
+
+        <!-- Stopwatch -->
+
+        <div class="box stopwatch-box">
+
+            <h2>Stopwatch</h2>
+
+            <div id="stopwatch">
+                00:00:00:000
+            </div>
+
+
+            <div class="buttons">
+
+                <button
+                    class="start"
+                    onclick="startStopwatch()">
+                    ▶ Start
+                </button>
+
+                <button
+                    class="pause"
+                    onclick="pauseStopwatch()">
+                    ❚❚ Pause
+                </button>
+
+                <button
+                    class="lap"
+                    onclick="lapTime()">
+                    ◷ Lap
+                </button>
+
+                <button
+                    class="reset"
+                    onclick="resetStopwatch()">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+
+            <!-- Lap Times -->
+
+            <div class="lap-section">
+
+                <div class="lap-title">
+
+                    <h3>Lap Times</h3>
+
+                    <span id="lapCount">
+                        0 laps
+                    </span>
+
+                </div>
+
+
+                <ul id="laps">
+
+                    <li class="empty">
+                        Start the stopwatch and press
+                        <b>Lap</b> to record a time.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            Digital Clock & Stopwatch
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

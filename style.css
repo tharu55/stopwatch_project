@@ -1,0 +1,474 @@
+/* ==============================
+   BASIC SETTINGS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b
+        );
+
+    color: white;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   MAIN TITLE
+============================== */
+
+h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==============================
+   COMMON BOX
+============================== */
+
+.box {
+
+    background: #172235;
+
+    border: 1px solid #2a3950;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==============================
+   HEADINGS
+============================== */
+
+h2 {
+
+    font-size: 18px;
+
+    color: #94a3b8;
+
+    margin-bottom: 20px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   DIGITAL CLOCK
+============================== */
+
+#clock {
+
+    font-family: monospace;
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+}
+
+
+#date {
+
+    margin-top: 12px;
+
+    font-size: 15px;
+
+    color: #94a3b8;
+}
+
+
+/* ==============================
+   STOPWATCH
+============================== */
+
+#stopwatch {
+
+    font-family: monospace;
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #38bdf8;
+
+    margin: 10px 0 25px;
+
+    text-shadow:
+        0 0 20px
+        rgba(56, 189, 248, 0.25);
+}
+
+
+/* ==============================
+   BUTTON AREA
+============================== */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+button {
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 12px 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        opacity 0.2s;
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+button:active {
+
+    transform: translateY(0);
+}
+
+
+/* Start */
+
+.start {
+
+    background: #16a34a;
+
+    box-shadow:
+        0 5px 15px
+        rgba(22, 163, 74, 0.25);
+}
+
+
+/* Pause */
+
+.pause {
+
+    background: #d97706;
+
+    box-shadow:
+        0 5px 15px
+        rgba(217, 119, 6, 0.25);
+}
+
+
+/* Lap */
+
+.lap {
+
+    background: #0284c7;
+
+    box-shadow:
+        0 5px 15px
+        rgba(2, 132, 199, 0.25);
+}
+
+
+/* Reset */
+
+.reset {
+
+    background: #dc2626;
+
+    box-shadow:
+        0 5px 15px
+        rgba(220, 38, 38, 0.25);
+}
+
+
+/* ==============================
+   LAP SECTION
+============================== */
+
+.lap-section {
+
+    text-align: left;
+
+    border-top: 1px solid #2a3950;
+
+    padding-top: 20px;
+}
+
+
+.lap-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+
+h3 {
+
+    font-size: 16px;
+
+    color: #e2e8f0;
+}
+
+
+#lapCount {
+
+    font-size: 12px;
+
+    color: #64748b;
+
+    background: #0f172a;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+}
+
+
+/* ==============================
+   LAP LIST
+============================== */
+
+#laps {
+
+    list-style: none;
+
+    max-height: 200px;
+
+    overflow-y: auto;
+}
+
+
+/* Lap item */
+
+#laps li {
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    align-items: center;
+
+    padding: 12px 15px;
+
+    margin-bottom: 7px;
+
+    background: #1e2b40;
+
+    border: 1px solid #293850;
+
+    border-radius: 8px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+}
+
+
+#laps li span:first-child {
+
+    color: #64748b;
+
+}
+
+
+#laps li span:last-child {
+
+    color: #38bdf8;
+
+    text-align: right;
+}
+
+
+/* Empty message */
+
+#laps .empty {
+
+    display: block;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    padding: 18px;
+}
+
+
+/* ==============================
+   SCROLLBAR
+============================== */
+
+#laps::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+#laps::-webkit-scrollbar-track {
+
+    background: #0f172a;
+}
+
+
+#laps::-webkit-scrollbar-thumb {
+
+    background: #334155;
+
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 20px 12px;
+    }
+
+
+    h1 {
+
+        font-size: 25px;
+    }
+
+
+    .box {
+
+        padding: 25px 15px;
+    }
+
+
+    #clock {
+
+        font-size: 38px;
+
+        letter-spacing: 2px;
+    }
+
+
+    #stopwatch {
+
+        font-size: 30px;
+
+        letter-spacing: 1px;
+    }
+
+
+    button {
+
+        padding: 10px 14px;
+
+        font-size: 13px;
+    }
+
+}
